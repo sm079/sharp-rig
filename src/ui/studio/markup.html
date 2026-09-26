@@ -1,0 +1,124 @@
+<!-- VIEWPORT: the whole upper area is the 3D view; the shot is outlined inside it. -->
+<section class="box view" data-ref="view" aria-label="Viewport">
+  <!-- The Studio mounts its canvas here (fill mode); the output frame is drawn as an outline. -->
+  <div class="stage" data-ref="stage">
+    <div class="building" data-ref="building"><span data-ref="buildText">Building 3D scene</span><span class="bar"><i data-ref="buildBar"></i></span></div>
+
+    <div class="drop" data-ref="drop">
+      <div class="up"><i data-i="upload"></i></div>
+      <h1>Drop a photo</h1>
+      <p>It becomes a 3D scene you can move a camera through. Runs on your device.</p>
+      <div class="acts">
+        <button type="button" class="btn pri" data-ref="pick">Choose photo</button>
+        <button type="button" class="btn" data-ref="sample">Try a sample</button>
+      </div>
+      <button type="button" class="model-line" data-ref="modelLine"><span class="dot"></span><span data-ref="modelText"></span></button>
+    </div>
+  </div>
+
+  <div class="vbar" role="toolbar" aria-label="Viewport">
+    <div class="seg" role="group" aria-label="View">
+      <button type="button" data-view="camera" title="See through the camera · C">Camera</button><button type="button" data-view="director" title="See the camera path from outside · V&#10;Drag to orbit · Shift-drag to pan · Scroll to zoom">Director</button>
+    </div>
+    <div class="seg" role="group" aria-label="Viewport tool">
+      <button type="button" data-mode="free" title="Look around · 1&#10;Drag to look · Shift-drag to move · Scroll to push in"><i data-i="move"></i><span>Look</span></button><button type="button" data-mode="pivot" title="Orbit · 2&#10;Drag to swing around the orbit point · Scroll to change distance · Drag the dot to move it"><i data-i="orbit"></i><span>Orbit</span></button>
+    </div>
+    <button type="button" class="ghost" data-ref="resetCam" title="Reset to the photo's camera"><i data-i="reset"></i></button>
+    <div class="grow"></div>
+    <button type="button" class="ghost help-btn" data-ref="helpBtn" aria-haspopup="dialog" aria-expanded="false" title="Mouse and keyboard controls · ?"><i data-i="help"></i></button>
+    <button type="button" class="ghost" data-ref="aspect" aria-haspopup="menu" title="Output aspect ratio"><span class="aspect-glyph" data-ref="aspectGlyph"></span><span data-ref="aspectLabel">16:9</span><i data-i="down"></i></button>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="box tl" aria-label="Timeline">
+  <div class="tl-bar">
+    <button type="button" class="play" data-ref="play" aria-label="Play" title="Play / pause · Space"><i data-i="play"></i></button>
+    <span class="tc num" data-ref="tc"><b>0.00</b> / 5.00 s</span>
+    <span class="mname" data-ref="mname"></span>
+    <div class="grow"></div>
+    <div class="key-acts" role="group" aria-label="Keyframe">
+      <button type="button" class="ghost" data-ref="copyKey" title="Copy the selected keyframe · Ctrl C"><i data-i="copy"></i>Copy</button>
+      <button type="button" class="ghost" data-ref="pasteKey" title="Paste the copied keyframe at the playhead · Ctrl V"><i data-i="paste"></i>Paste</button>
+      <button type="button" class="ghost" data-ref="delKey" title="Delete the selected keyframe · Del"><i data-i="trash"></i>Delete</button>
+    </div>
+    <button type="button" class="ghost" data-ref="clearKeys" title="Remove every keyframe"><i data-i="clear"></i>Clear keyframes</button>
+    <button type="button" class="ghost key" data-ref="addKey" title="Keyframe the camera at the playhead · K&#10;Camera changes are keyed automatically"><i data-i="diamond"></i>Add keyframe</button>
+    <span class="vsep"></span>
+    <button type="button" class="ghost loop-btn" data-ref="loop" aria-haspopup="menu" title="Playback: once, loop, or back &amp; forth"><span data-ref="loopIcon"></span><i data-i="down"></i></button>
+    <div class="zoom" role="group" aria-label="Timeline zoom">
+      <button type="button" class="ghost" data-ref="zoomOut" title="Zoom out · −"><i data-i="zoomOut"></i></button>
+      <button type="button" class="ghost" data-ref="zoomIn" title="Zoom in · =&#10;Ctrl-scroll on the timeline to zoom at the cursor"><i data-i="zoomIn"></i></button>
+      <button type="button" class="ghost" data-ref="zoomFit" title="Show the whole timeline · \"><i data-i="fit"></i></button>
+    </div>
+    <label class="dur">Length <input class="num" data-ref="length" inputmode="decimal" aria-label="Length in seconds" value="5.0"> s</label>
+  </div>
+  <div class="track-scroll" data-ref="scroll">
+    <div class="track" data-ref="track">
+      <div class="inner" data-ref="inner">
+        <div class="ruler" data-ref="ruler"></div>
+        <div class="lane" data-ref="lane"></div>
+        <div class="marks" data-ref="marks"></div>
+        <div class="playhead" data-ref="playhead"></div>
+      </div>
+    </div>
+    <div class="lane-empty" data-ref="laneEmpty">Drop a photo to start</div>
+  </div>
+</section>
+
+<!-- EVERYTHING ELSE -->
+<aside class="box side" aria-label="Settings">
+  <div class="side-head">
+    <div class="th" data-ref="thumb"></div>
+    <div class="grow">
+      <div class="t" data-ref="fname">No photo</div>
+      <button type="button" class="s" data-ref="fstatus" title="3D model settings">Waiting for a photo</button>
+    </div>
+    <button type="button" class="ghost new" title="Start from another photo or .ply (your move carries over)" data-ref="newBtn"><i data-i="plus"></i>New</button>
+    <button type="button" class="ghost" title="More" data-ref="menu" aria-haspopup="menu"><i data-i="more"></i></button>
+  </div>
+
+  <div class="side-body">
+    <div class="sec">
+      <div class="sec-t">Move <span data-ref="moveInfo"></span></div>
+      <div class="presets" data-ref="presets"></div>
+      <div class="more-row">
+        <button type="button" class="ghost more" data-ref="moreBtn">Show all moves</button>
+        <button type="button" class="ghost more" data-ref="saveMove" hidden title="Save this move to My motions">Save move</button>
+      </div>
+
+      <div class="amount" data-ref="amountBox">
+        <div class="row"><span>Amount</span><input type="range" data-ref="amount" min="5" max="100" step="1" value="50" aria-label="Amount of movement"><output class="num" data-ref="amountOut">1.0×</output></div>
+        <div class="scale"><span>Subtle</span><span>Strong</span></div>
+        <p class="hint" data-ref="amountHint">How far the chosen move travels. The move restarts when you let go.</p>
+      </div>
+
+    </div>
+
+    <details class="sec" data-ref="camSec" open>
+      <summary>Camera <i data-i="down"></i></summary>
+      <p class="hint">Exact position, angle and lens at the playhead. Every change is keyed automatically.</p>
+      <div data-ref="camRows"></div>
+      <div data-ref="orbitRows" hidden>
+        <div class="lbl">Orbit point</div>
+        <div class="pills" data-ref="pivotPlace" role="group" aria-label="Orbit point">
+          <button type="button" data-v="front" title="Orbit the subject">Subject</button><button type="button" data-v="rear" title="Pivot behind the camera: boom / jib sweeps">Behind</button><button type="button" data-v="top" title="Pivot above the camera: pendulum swings">Above</button><button type="button" data-v="right" title="Pivot beside the camera: swing-door moves">Side</button>
+        </div>
+        <div class="row arm" title="Distance from the camera to the orbit point"><span>Arm</span><input type="range" data-ref="arm" aria-label="Arm length"><output class="num" data-ref="armOut"></output></div>
+      </div>
+    </details>
+
+    <details class="sec" open>
+      <summary>Background <i data-i="down"></i></summary>
+      <p class="hint">Fills the areas a camera move reveals beyond the edges of the 3D scene.</p>
+      <div data-ref="bgPicker"></div>
+    </details>
+  </div>
+
+  <div class="side-foot">
+    <button type="button" class="export" data-ref="export" disabled><span class="fill" data-ref="exportFill"></span><i data-i="download"></i><span data-ref="exportLabel">Export video</span></button>
+    <div class="foot-meta">
+      <button type="button" data-ref="res" aria-haspopup="menu" title="Resolution">1080p</button><button type="button" data-ref="fps" aria-haspopup="menu" title="Frame rate">30 fps</button><button type="button" data-ref="fmt" aria-haspopup="menu" title="Format">MP4</button><button type="button" data-ref="direction" aria-haspopup="menu" title="What the video contains">Forward</button>
+    </div>
+  </div>
+</aside>

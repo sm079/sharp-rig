@@ -1,0 +1,8 @@
+node_modules
+dist
+public/models/*
+!public/models/README.md
+*.pt
+*.onnx
+*.onnx.data
+__pycache__

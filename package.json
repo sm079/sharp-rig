@@ -1,0 +1,21 @@
+{
+  "name": "sharp-rig",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "mp4-muxer": "^5.2.2",
+    "onnxruntime-web": "^1.30.0",
+    "webm-muxer": "^5.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}
